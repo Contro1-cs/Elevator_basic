@@ -1,0 +1,43 @@
+//So Basically working on to how can we manage the elevator systen in the fastest and the most efficient way to travel accross the buildings
+//This is a basic code that only allows user to give results based on whether they want to go to the top floor or the bottom floor
+//Next step towards development of this code would be to take an input where the passenger wants to go before they even board in the evelvator
+//to be continued...
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int tot,dest;
+    
+    cout<<"Enter total number of floors: ";cin>>tot;
+    
+    int call[tot];
+
+    for(int i=0;i<tot;i++)
+    {
+        cout<<"Floors to go in: ";cin>>call[i];
+    }
+
+    cout<<"Enter destination: \n1.Up\n2.Down"<<endl;cin>>dest;
+
+    if(dest==1)
+    {
+        sort(call,call+tot);
+        for(int i=tot;i>=0;i--)
+        {
+            cout<<call[i]<<" - ";
+        }
+        cout<<"Ground floor";
+    }
+    else
+    {
+        sort(call,call+tot);
+        for(int i=0;i<tot;i++)
+        {
+            cout<<call[i]<<" - ";
+        }
+        cout<<"Top floor";
+    }
+}

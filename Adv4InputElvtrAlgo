@@ -1,0 +1,63 @@
+//This algorithm takes 4 inputs
+//floor - floor to first call the evevator (Considering that the elevator is already on that floor)
+//dest - Destination of the passenger boarding on 'floor'
+//nxtfloor - floor of the next passenger 
+//nxtdest - destination of the passenger boarding on 'nxtfloor'
+//This algoright only intakes the consideration of 2 passengers
+//Next advancement in the algorighm would be: 
+//1. Shift the initial position of the elevator
+//2. Intake flexible inputs and soft code the answers
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int floor,nxtfloor,dest,nxtdest;
+    int ele[4];
+    floor = 1;
+    dest = 4;
+    nxtfloor = 2;
+    nxtdest = 3;
+    ele[0]=floor;
+    cout<<"Current floor: "<<floor<<endl;
+    cout<<"Destination: "<<dest<<endl;
+    cout<<"Next floor: "<<nxtfloor<<endl;
+    cout<<"Next destination: "<<nxtdest<<endl;
+
+    if(nxtdest<floor)
+    {
+        ele[1]=dest;
+        ele[2]=nxtfloor;
+        ele[3]=nxtdest;
+    }
+    else if(nxtdest<nxtfloor && nxtdest>floor)
+    {
+        ele[1]=dest;
+        ele[2]=nxtfloor;
+        ele[3]=nxtdest;
+    }
+    else if(nxtdest<dest && nxtdest>nxtfloor)
+    {
+        ele[1]=nxtfloor;
+        ele[2]=nxtdest;
+        ele[3]=dest;
+    }
+    else if(nxtdest>dest)
+    {
+        ele[1]=nxtfloor;
+        ele[2]=dest;
+        ele[3]=nxtdest;
+    }
+    else 
+    {
+        NULL;
+    }
+    for(int i=0;i<4;i++)
+    {
+        cout<<ele[i]<<" - ";
+    }
+
+
+
+}
